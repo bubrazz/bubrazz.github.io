@@ -1,88 +1,116 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to bottom, #e0f7fa, #ffffff);
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Portfólio - Jeferson Luiz Bub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-header {
-  background-color: #004080;
-  color: white;
-  padding: 30px 20px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+  <header>
+<section id="foto">
+  <img src="bub.jpg" alt="Foto de Jeferson Luiz Bub" class="foto-perfil">
+</section>
+    <h1>Jeferson Luiz Bub (Bub)</h1>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
 
-nav a {
-  margin: 0 15px;
-  color: #ffcc00;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 18px;
-}
+  <section id="sobre">
+    <h2>Sobre Mim</h2>
+    <p>Sou o Bub, apaixonado por programação e criatividade. Estou em minha jornada no desenvolvimento web com foco em HTML, CSS e JavaScript.</p>
+  </section>
+  <section id="servicos">
+  <h2>💼 Serviços</h2>
+  <div class="servico">
+    <img src="https://cdn-icons-png.flaticon.com/512/2721/2721269.png" alt="Site Pessoal">
+    <h3>Criação de Portfólio</h3>
+    <p>Sites modernos e profissionais para mostrar suas habilidades ao mundo.</p>
+  </div>
 
-nav a:hover {
-  text-decoration: underline;
-}
+  <div class="servico">
+    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Landing Page">
+    <h3>Landing Pages</h3>
+    <p>Páginas otimizadas para apresentação de produtos ou serviços.</p>
+  </div>
 
-section {
-  padding: 80px 20px;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
-}
+  <div class="servico">
+    <img src="https://cdn-icons-png.flaticon.com/512/906/906175.png" alt="Site Responsivo">
+    <h3>Sites Responsivos</h3>
+    <p>Sites que funcionam perfeitamente no celular, tablet ou computador.</p>
+  </div>
+  
+  <section id="habilidades">
+  <h2>💻 Habilidades Técnicas</h2>
+  <div class="skills-container">
+    <div class="skill">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML5">
+      <p>HTML5</p>
+    </div>
+    <div class="skill">
+      <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS3">
+      <p>CSS3</p>
+    </div>
+    <div class="skill">
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript">
+      <p>JavaScript</p>
+    </div>
+    <div class="skill">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111288.png" alt="GitHub">
+      <p>GitHub</p>
+    </div>
+  </div>
+</section>
+</section>
+  <section id="projetos">
+  <h2>🛠️ Projetos</h2>
 
-.foto-perfil {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 6px solid #ffcc00;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  margin: 20px auto;
-  display: block;
-}
+  <div class="projeto">
+    <img src="https://cdn-icons-png.flaticon.com/512/841/841364.png" alt="Projeto 1" class="img-projeto">
+    <h3>Portfólio Pessoal</h3>
+    <p>🌐 Site criado com HTML e CSS, apresentando minhas informações, contatos e links.</p>
+    <a href="#" target="_blank" class="botao">Ver Projeto</a>
+  </div>
 
-.projeto {
-  background-color: #ffffff;
-  margin: 30px auto;
-  padding: 20px;
-  border-radius: 12px;
-  max-width: 600px;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-}
+  <div class="projeto">
+    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Projeto 2" class="img-projeto">
+    <h3>Página de Produto</h3>
+    <p>🛍️ Site fictício para venda de produto, com layout moderno e responsivo.</p>
+    <a href="#" target="_blank" class="botao">Ver Projeto</a>
+  </div>
+</section>
 
-.projeto img {
-  max-width: 100%;
-  border-radius: 10px;
-}
+    </div>
 
-.projeto .botao {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 12px 24px;
-  background-color: #004080;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: background-color 0.3s;
-}
+    
+    <section id="cursos">
+  <h2>Cursos e Certificados</h2>
+  <ul class="lista-cursos">
+    <li>HTML5 e CSS3 - Curso em Vídeo (com certificado)</li>
+    <li>Trilha Discover - Rocketseat (em andamento)</li>
+    <li>Git e GitHub - Curso em Vídeo (com certificado)</li>
+    <li>JavaScript Básico - Danki Code (planejado)</li>
+  </ul>
+</section>
 
-.projeto .botao:hover {
-  background-color: #002c5a;
-}
-
-.lista-cursos {
-  list-style-type: none;
-  padding: 0;
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.lista-cursos li {
-  background-color: #f0faff;
-  padding: 14px;
-  margin: 10px 0;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
+  </section><section id="contato">
+  <h2>Contato</h2>
+  <p>Email: <a href="mailto:bubrazz@gmail.com">bubrazz@gmail.com</a></p>
+  <div class="redes-sociais"><a href="https://wa.me/5547984263786" class="botao-whatsapp" target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
+   
+</a>
+  
+    <a href="https://instagram.com/seuusuario" target="_blank" title="Instagram">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram" />
+    </a>
+    <a href="https://github.com/bubrazz" target="_blank" title="GitHub">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+    </a>
+  </div>
+  </section>
+  
