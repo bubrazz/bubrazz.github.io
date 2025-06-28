@@ -5,7 +5,11 @@ body {
   background-color: #f9f9f9;
 }
 
-header {
+header
+{
+  <section id="foto">
+  <img src="foto-bub.jpg" alt="Foto de Jeferson Luiz Bub" class="foto-perfil">
+</section>
   background-color: #222;
   color: white;
   padding: 20px;
@@ -67,4 +71,11 @@ section {
   margin: 10px 0;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.foto-perfil {
+  width: 200px;
+  border-radius: 50%;
+  border: 5px solid #004080;
+  margin-top: 30px;
 }
