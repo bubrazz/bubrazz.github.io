@@ -2,25 +2,27 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
+  background: linear-gradient(to bottom, #e0f7fa, #ffffff);
 }
 
-header
-{
-  <section id="foto">
-  <img src="foto-bub.jpg" alt="Foto de Jeferson Luiz Bub" class="foto-perfil">
-</section>
-  background-color: #222;
+header {
+  background-color: #004080;
   color: white;
-  padding: 20px;
+  padding: 30px 20px;
   text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 nav a {
-  margin: 0 10px;
-  color: #00bfff;
+  margin: 0 15px;
+  color: #ffcc00;
   text-decoration: none;
   font-weight: bold;
+  font-size: 18px;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 section {
@@ -29,14 +31,24 @@ section {
   border-bottom: 1px solid #ddd;
 }
 
+.foto-perfil {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid #ffcc00;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin: 20px auto;
+  display: block;
+}
+
 .projeto {
   background-color: #ffffff;
-  margin: 20px auto;
+  margin: 30px auto;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 12px;
   max-width: 600px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
 .projeto img {
@@ -46,17 +58,19 @@ section {
 
 .projeto .botao {
   display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #00bfff;
+  margin-top: 12px;
+  padding: 12px 24px;
+  background-color: #004080;
   color: white;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
 }
 
 .projeto .botao:hover {
-  background-color: #0099cc;
+  background-color: #002c5a;
 }
+
 .lista-cursos {
   list-style-type: none;
   padding: 0;
@@ -66,16 +80,191 @@ section {
 }
 
 .lista-cursos li {
-  background-color: #e6f7ff;
-  padding: 12px;
+  background-color: #f0faff;
+  padding: 14px;
   margin: 10px 0;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
-.foto-perfil {
-  width: 200px;
-  border-radius: 50%;
-  border: 5px solid #004080;
+.redes-sociais {
+  margin-top: 20px;
+}
+
+.redes-sociais a {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.redes-sociais img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s;
+}
+
+.redes-sociais img:hover {
+  transform: scale(1.2);
+}
+
+.img-projeto {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+/* ===== Estilos para CELULAR ===== */
+@media (max-width: 768px) {
+
+  body {
+    padding: 10px;
+  }
+
+  header {
+    padding: 20px 10px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+    font-size: 18px;
+  }
+
+  .foto-perfil {
+    width: 120px;
+    margin-top: 10px;
+  }
+
+  .projeto {
+    padding: 15px;
+    margin: 15px auto;
+  }
+
+  .img-projeto {
+    width: 60px;
+    height: 60px;
+  }
+
+  .botao {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .lista-cursos li {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .redes-sociais img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+#servicos {
+  padding: 60px 20px;
+  background-color: #f0f8ff;
+  text-align: center;
+}
+
+#servicos h2 {
+  margin-bottom: 40px;
+}
+
+.servico {
+  display: inline-block;
+  max-width: 280px;
+  margin: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+.servico img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.servico h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.servico p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Efeito bonito nos cartões de serviços */
+.servico {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Quando passa o mouse */
+.servico:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.servico:hover {
+  background-color: #e6f7ff;
+}
+
+#habilidades {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
   margin-top: 30px;
 }
+
+.skill {
+  width: 100px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.skill img {
+  width: 60px;
+  height: 60px;
+}
+
+.skill p {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+.skill:hover {
+  transform: scale(1.1);
+}
+
+.botao-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.botao-whatsapp img {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s ease;
+}
+
+.botao-whatsapp img:hover {
+  transform: scale(1.1);
+  }
