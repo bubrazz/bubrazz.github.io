@@ -126,31 +126,40 @@
   </footer>
 
   <!-- Botão flutuante do WhatsApp -->
-  <a href="https://wa.me/55479XXXXXXX" class="whatsapp-float" target="_blank" title="Fale com o Capitão!">
+  <a href="https://wa.me/5547984263786" class="whatsapp-float" target="_blank" title="Fale com o Capitão!">
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
   </a>
 
   <!-- Mensagem de boas-vindas -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
-  window.onload = function() {
-    Swal.fire({
-      title: 'Ahoy!',
-      text: 'Bem-vindo ao Cantinho do Capitão Catinga! Tire as botas, relaxe e aproveite a bordo!',
-      icon: 'info',
-      confirmButtonText: 'Aye Capitão!',
-      background: '#fff8e1',
-      color: '#4e342e'
-    });
-  };
+    window.onload = function() {
+      Swal.fire({
+        title: 'Ahoy!',
+        text: 'Bem-vindo ao Cantinho do Capitão Catinga! Tire as botas, relaxe e aproveite a bordo!',
+        icon: 'info',
+        confirmButtonText: 'Aye Capitão!',
+        background: '#fff8e1',
+        color: '#4e342e'
+      });
+    };
+  </script>
 
-<script>
-  fetch('https://api.countapi.xyz/hit/bub-visitas/inicio')
-    .then(res => res.json())
-    .then(res => {
-      console.log("Visitas:", res.value);
-    });
-</script>
-  <
+  <!-- Contador de visitas -->
+  <script>
+    fetch('https://api.countapi.xyz/hit/bub-visitas/inicio')
+      .then(res => res.json())
+      .then(res => {
+        console.log("Visitas:", res.value);
+      });
+  </script>
+  
+  <!-- Botão flutuante do WhatsApp para espetáculo infantil -->
+<a href="https://wa.me/5547984263786?text=Ol%C3%A1%2C%20quero%20levar%20o%20espet%C3%A1culo%20do%20Capit%C3%A3o%20Catinga%20para%20minha%20escola!" 
+   class="whatsapp-float" 
+   target="_blank" 
+   title="Fale com o Capitão!">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
 </body>
 </html>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
