@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capitão Catinga e Marujinho Samuel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Fredoka One', cursive;
+      background: linear-gradient(to bottom, #e0f7fa, #fff9c4);
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #fdd835;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #2e7d32;
+    }
+
+    .container {
+      padding: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .personagens {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .personagem {
+      background: #ffffffcc;
+      padding: 20px;
+      border-radius: 20px;
+      text-align: center;
+      width: 250px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .personagem img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    footer {
+      background-color: #ffecb3;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.9rem;
+      margin-top: 30px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 100;
+      width: 60px;
+      height: 60px;
+    }
+
+    .whatsapp-float img {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Cantinho do Capitão Catinga</h1>
+    <p>Uma aventura mágica com Marujinho Samuel!</p>
+  </header>
+
+  <div class="container">
+    <section>
+      <h2>Sobre o Projeto</h2>
+      <p>
+        Este é o cantinho encantado do <strong>Capitão Catinga</strong> e do pequeno <strong>Marujinho Samuel</strong>, dois aventureiros que viajam pelos mares em busca de tesouros mágicos, risadas e aprendizado. 
+        Um projeto infantil criado para encantar, divertir e ensinar valores como amizade, coragem e curiosidade!
+      </p>
+    </section>
+
+    <section class="personagens">
+      <div class="personagem">
+        <img src="capitao.jpg" alt="Capitão Catinga">
+        <h3>Capitão Catinga</h3>
+        <p>Um pirata atrapalhado e engraçado, de camisa vermelha, calça preta, botas e cavanhaque reto no queixo. Adora contar histórias e procurar tesouros mágicos.</p>
+      </div>
+
+      <div class="personagem">
+        <img src="marujinho.jpg" alt="Marujinho Samuel">
+        <h3>Marujinho Samuel</h3>
+        <p>Tem 4 anos, chapéu de marinheiro branco e uma espadinha de madeira. Ele é curioso, esperto e sempre ajuda o Capitão em suas aventuras!</p>
+      </div>
+
+      <div class="personagem">
+        <img src="papagaio.jpg" alt="Papagaio Rouge">
+        <h3>Papagaio Rouge</h3>
+        <p>O papagaio travesso da tripulação! Vive aprontando, rouba mapas, faz barulhos engraçados e adora uma boa gargalhada.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Quer levar essa aventura para sua escola ou evento?</h2>
+      <p>
+        Entre em contato e leve o espetáculo <em>"Em busca do Tesouro Encantado"</em> para encantar crianças com muita música, risadas e imaginação!
+      </p>
+      <p><strong>📧 Email:</strong> bubrazz@gmail.com</p>
+      <p><strong>📱 WhatsApp:</strong> (47) 98426-3786</p>
+    </section>
+  </div>
+
+  <footer>
+    © 2025 Cantinho do Capitão Catinga | Todos os direitos reservados
+  </footer>
+
+  <!-- Botão flutuante do WhatsApp -->
+  <a href="https://wa.me/55479XXXXXXX" class="whatsapp-float" target="_blank" title="Fale com o Capitão!">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+  </a>
+
+  <!-- Mensagem de boas-vindas -->
+  <script>
+  window.onload = function() {
+    Swal.fire({
+      title: 'Ahoy!',
+      text: 'Bem-vindo ao Cantinho do Capitão Catinga! Tire as botas, relaxe e aproveite a bordo!',
+      icon: 'info',
+      confirmButtonText: 'Aye Capitão!',
+      background: '#fff8e1',
+      color: '#4e342e'
+    });
+  };
+
+<script>
+  fetch('https://api.countapi.xyz/hit/bub-visitas/inicio')
+    .then(res => res.json())
+    .then(res => {
+      console.log("Visitas:", res.value);
+    });
+</script>
+  <
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
