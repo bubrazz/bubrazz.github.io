@@ -15,7 +15,7 @@
     }
 
     header {
-      background-color: #fdd835;
+      background: linear-gradient(to right, #ff8a65, #ffd54f);
       padding: 20px;
       text-align: center;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -24,7 +24,7 @@
     header h1 {
       margin: 0;
       font-size: 2.5rem;
-      color: #2e7d32;
+      color: #4e342e;
     }
 
     .container {
@@ -41,17 +41,81 @@
     }
 
     .personagem {
-      background: #ffffffcc;
-      padding: 20px;
-      border-radius: 20px;
       text-align: center;
-      width: 250px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: relative;
+      width: 200px;
+      transition: transform 0.3s ease;
     }
 
     .personagem img {
       width: 100%;
-      border-radius: 10px;
+      border-radius: 12px;
+      cursor: pointer;
+      border: 4px solid transparent;
+      transition: transform 0.3s ease, border 0.3s ease;
+    }
+
+    .personagem img:hover {
+      transform: scale(1.05);
+    }
+
+    .personagem.ativo img {
+      border: 5px dotted #ff9800;
+      box-shadow: 0 0 20px #ff9800;
+      transform: scale(1.05) rotate(-1deg);
+    }
+
+    .fala {
+      display: none;
+      position: absolute;
+      top: -10px;
+      left: 110%;
+      background-color: #fff8e1;
+      color: #4e342e;
+      border-radius: 12px;
+      padding: 15px;
+      width: 200px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: left;
+      z-index: 10;
+    }
+
+    .fala::before {
+      content: '';
+      position: absolute;
+      left: -20px;
+      top: 20px;
+      border: 10px solid transparent;
+      border-right-color: #fff8e1;
+    }
+
+    .personagem.ativo .fala {
+      display: block;
+      animation: aparecer 0.4s ease forwards;
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      z-index: 999;
+    }
+
+    .whatsapp-float img {
+      width: 100%;
     }
 
     footer {
@@ -60,19 +124,6 @@
       padding: 10px;
       font-size: 0.9rem;
       margin-top: 30px;
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 100;
-      width: 60px;
-      height: 60px;
-    }
-
-    .whatsapp-float img {
-      width: 100%;
     }
   </style>
 </head>
@@ -92,22 +143,22 @@
     </section>
 
     <section class="personagens">
-      <div class="personagem">
+      <div class="personagem" onclick="mostrarFala(this)">
         <img src="capitao.jpg" alt="Capitão Catinga">
         <h3>Capitão Catinga</h3>
-        <p>Um pirata atrapalhado e engraçado, de camisa vermelha, calça preta, botas e cavanhaque reto no queixo. Adora contar histórias e procurar tesouros mágicos.</p>
+        <div class="fala">Oi! Eu sou o Capitão Catinga! Gosto de aventuras, de contar histórias e de procurar tesouros mágicos pelo mar!</div>
       </div>
 
-      <div class="personagem">
+      <div class="personagem" onclick="mostrarFala(this)">
         <img src="marujinho.jpg" alt="Marujinho Samuel">
         <h3>Marujinho Samuel</h3>
-        <p>Tem 4 anos, chapéu de marinheiro branco e uma espadinha de madeira. Ele é curioso, esperto e sempre ajuda o Capitão em suas aventuras!</p>
+        <div class="fala">Oi! Eu sou o Marujinho Samuel, tenho 4 anos, uma espadinha de madeira e adoro ajudar o Capitão nas aventuras!</div>
       </div>
 
-      <div class="personagem">
+      <div class="personagem" onclick="mostrarFala(this)">
         <img src="papagaio.jpg" alt="Papagaio Rouge">
         <h3>Papagaio Rouge</h3>
-        <p>O papagaio travesso da tripulação! Vive aprontando, rouba mapas, faz barulhos engraçados e adora uma boa gargalhada.</p>
+        <div class="fala">KRÁÁ! Eu sou o Rouge, o papagaio mais travesso dos sete mares! Adoro roubar mapas e fazer bagunça!</div>
       </div>
     </section>
 
@@ -130,36 +181,24 @@
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
   </a>
 
-  <!-- Mensagem de boas-vindas -->
+  <!-- SweetAlert boas-vindas -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
     window.onload = function() {
       Swal.fire({
-        title: 'Ahoy!',
-        text: 'Bem-vindo ao Cantinho do Capitão Catinga! Tire as botas, relaxe e aproveite a bordo!',
+        title: 'Olá, marujo!',
+        text: 'Seja bem-vindo ao meu cantinho mágico dos sete mares!',
         icon: 'info',
         confirmButtonText: 'Aye Capitão!',
         background: '#fff8e1',
         color: '#4e342e'
       });
     };
-  </script>
 
-  <!-- Contador de visitas -->
-  <script>
-    fetch('https://api.countapi.xyz/hit/bub-visitas/inicio')
-      .then(res => res.json())
-      .then(res => {
-        console.log("Visitas:", res.value);
-      });
+    function mostrarFala(elemento) {
+      document.querySelectorAll('.personagem').forEach(el => el.classList.remove('ativo'));
+      elemento.classList.add('ativo');
+    }
   </script>
-  
-  <!-- Botão flutuante do WhatsApp para espetáculo infantil -->
-<a href="https://wa.me/5547984263786?text=Ol%C3%A1%2C%20quero%20levar%20o%20espet%C3%A1culo%20do%20Capit%C3%A3o%20Catinga%20para%20minha%20escola!" 
-   class="whatsapp-float" 
-   target="_blank" 
-   title="Fale com o Capitão!">
-  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-</a>
 </body>
 </html>
