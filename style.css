@@ -1,3 +1,4 @@
+/* Estilo Geral */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -11,6 +12,22 @@ header {
   color: white;
   padding: 30px 20px;
   text-align: center;
+}
+
+#foto {
+  margin-top: 10px;
+}
+
+.foto-perfil {
+  width: 180px;
+  border-radius: 50%;
+  border: 5px solid #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Navegação */
+nav {
+  margin-top: 15px;
 }
 
 nav a {
@@ -31,23 +48,15 @@ section {
   border-bottom: 1px solid #ddd;
 }
 
-.foto-perfil {
-  width: 180px;
-  border-radius: 50%;
-  border: 5px solid #ffffff;
-  margin-top: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-
-/* SERVIÇOS */
-#servicos {
+/* SERVIÇOS E PROJETOS */
+#servicos, #projetos {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
 }
 
-#servicos .servico {
+.servico, .projeto {
   max-width: 300px;
   width: 100%;
   padding: 20px;
@@ -57,9 +66,15 @@ section {
   text-align: center;
 }
 
-#servicos .servico img {
+.servico img, .projeto img {
   width: 60px;
   height: 60px;
+  margin-bottom: 10px;
+}
+
+.img-projeto {
+  max-width: 100px;
+  height: auto;
   margin-bottom: 10px;
 }
 
@@ -88,39 +103,6 @@ section {
   transform: scale(1.1);
   filter: brightness(1.2);
   opacity: 1;
-}
-
-/* PROJETOS */
-.projeto {
-  background-color: #ffffff;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 12px;
-  max-width: 600px;
-  width: 100%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  text-align: center;
-}
-
-.projeto img {
-  max-width: 100px;
-  height: auto;
-  border-radius: 8px;
-}
-
-.botao {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 12px 24px;
-  background-color: #007acc;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-}
-
-.botao:hover {
-  background-color: #005f99;
 }
 
 /* CURSOS */
@@ -156,23 +138,31 @@ section {
   transform: scale(1.1);
 }
 
-/* WHATSAPP FLOAT */
-.whatsapp-float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 20px;
-  right: 20px;
-  z-index: 100;
+/* BOTÃO */
+.botao {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 24px;
+  background-color: #007acc;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
 }
 
-.whatsapp-float img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+.botao:hover {
+  background-color: #005f99;
 }
 
+.botao-destaque {
+  background-color: #ff9800;
+  color: #fff !important;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin-left: 10px;
+}
+
+/* DEPOIMENTOS */
 #depoimentos {
   background-color: #ffffff;
   padding: 60px 20px;
@@ -181,35 +171,6 @@ section {
 
 #depoimentos h2 {
   margin-bottom: 40px;
-  color: #004080;
-}
-
-.depoimento {
-  max-width: 500px;
-  margin: 20px auto;
-  background-color: #f9f9f9;
-  border-left: 6px solid #007acc;
-  padding: 20px;
-  border-radius: 10px;
-  font-style: italic;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.depoimento span {
-  display: block;
-  margin-top: 10px;
-  font-weight: bold;
-  color: #555;
-}
-#depoimentos {
-  background-color: #ffffff;
-  padding: 60px 20px;
-  text-align: center;
-}
-
-#depoimentos h2 {
-  margin-bottom: 30px;
-  font-size: 2rem;
   color: #004080;
 }
 
@@ -245,15 +206,30 @@ section {
   opacity: 1;
   z-index: 1;
 }
-<script>
-  const depoimentos = document.querySelectorAll('.depoimento');
-  let index = 0;
 
-  function mostrarProximoDepoimento() {
-    depoimentos[index].classList.remove('ativo');
-    index = (index + 1) % depoimentos.length;
-    depoimentos[index].classList.add('ativo');
-  }
+/* WHATSAPP FLOAT */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
 
-  setInterval(mostrarProximoDepoimento, 4000);
-</script>
+.whatsapp-float img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* RODAPÉ */
+footer {
+  background-color: #004080;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
