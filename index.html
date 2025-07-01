@@ -180,9 +180,11 @@
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
   </a>
 
-  <!-- Sons e Scripts -->
+  <!-- Som de clique -->
   <audio id="click-sound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3" preload="auto"></audio>
+
   <script>
+    // Carrossel de depoimentos
     const depoimentos = document.querySelectorAll('.depoimento');
     let indexAtual = 0;
 
@@ -194,7 +196,7 @@
 
     setInterval(mostrarProximoDepoimento, 4000);
 
-    // Som ao clicar nos links e botões
+    // Som ao clicar em links e botões
     const clickSound = document.getElementById("click-sound");
     document.querySelectorAll("a, button").forEach(el => {
       el.addEventListener("click", () => {
@@ -203,24 +205,5 @@
       });
     });
   </script>
-  <audio id="click-sound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3" preload="auto"></audio>
-<script>
-  const clickSound = document.getElementById("click-sound");
-  document.querySelectorAll("a, button").<audio id="click-sound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3" preload="auto"></audio>
-<script>
-  const clickSound = document.getElementById("click-sound");
-  document.querySelectorAll("a, button").forEach(el => {
-    el.addEventListener("click", () => {
-      clickSound.currentTime = 0;
-      clickSound.play();
-    });
-  });
-</script>(el => {
-    el.addEventListener("click", () => {
-      clickSound.currentTime = 0;
-      clickSound.play();
-    });
-  });
-</script>
 </body>
 </html>
