@@ -1,4 +1,6 @@
-/* Estilo Geral */
+/* ============================
+   ESTILO GERAL
+============================ */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -25,7 +27,9 @@ header {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Navegação */
+/* ============================
+   NAVEGAÇÃO
+============================ */
 nav {
   margin-top: 15px;
 }
@@ -35,6 +39,7 @@ nav a {
   color: #ffdd57;
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
@@ -42,13 +47,18 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* ============================
+   SEÇÕES
+============================ */
 section {
   padding: 60px 20px;
   text-align: center;
   border-bottom: 1px solid #ddd;
 }
 
-/* SERVIÇOS E PROJETOS */
+/* ============================
+   SERVIÇOS E PROJETOS
+============================ */
 #servicos, #projetos {
   display: flex;
   flex-wrap: wrap;
@@ -78,7 +88,9 @@ section {
   margin-bottom: 10px;
 }
 
-/* HABILIDADES */
+/* ============================
+   HABILIDADES
+============================ */
 .skills-container {
   display: flex;
   flex-wrap: wrap;
@@ -105,9 +117,11 @@ section {
   opacity: 1;
 }
 
-/* CURSOS */
+/* ============================
+   CURSOS
+============================ */
 .lista-cursos {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
   max-width: 600px;
   margin: 0 auto;
@@ -122,7 +136,9 @@ section {
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
-/* REDES SOCIAIS */
+/* ============================
+   REDES SOCIAIS
+============================ */
 .redes-sociais {
   margin-top: 20px;
 }
@@ -138,7 +154,9 @@ section {
   transform: scale(1.1);
 }
 
-/* BOTÃO */
+/* ============================
+   BOTÕES
+============================ */
 .botao {
   display: inline-block;
   margin-top: 10px;
@@ -162,7 +180,9 @@ section {
   margin-left: 10px;
 }
 
-/* DEPOIMENTOS */
+/* ============================
+   DEPOIMENTOS
+============================ */
 #depoimentos {
   background-color: #ffffff;
   padding: 60px 20px;
@@ -207,7 +227,9 @@ section {
   z-index: 1;
 }
 
-/* WHATSAPP FLOAT */
+/* ============================
+   WHATSAPP FLOAT
+============================ */
 .whatsapp-float {
   position: fixed;
   width: 60px;
@@ -224,7 +246,9 @@ section {
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
-/* RODAPÉ */
+/* ============================
+   RODAPÉ
+============================ */
 footer {
   background-color: #004080;
   color: white;
@@ -232,4 +256,4 @@ footer {
   padding: 20px;
   font-size: 0.9rem;
   margin-top: 40px;
-  }
+}
