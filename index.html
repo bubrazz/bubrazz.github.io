@@ -64,33 +64,35 @@
     </section>
 
     <section id="projetos">
-      <h2>💼 Serviços e Projetos</h2>
-      <div class="servico">
-        <img src="https://cdn-icons-png.flaticon.com/512/2721/2721269.png" alt="Site Pessoal" />
-        <h3>Criação de Portfólio</h3>
-        <p>Sites modernos e profissionais para mostrar suas habilidades ao mundo.</p>
-      </div>
-      <div class="servico">
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Landing Page" />
-        <h3>Landing Pages</h3>
-        <p>Páginas otimizadas para apresentação de produtos ou serviços.</p>
-      </div>
-      <div class="servico">
-        <img src="https://cdn-icons-png.flaticon.com/512/906/906175.png" alt="Site Responsivo" />
-        <h3>Sites Responsivos</h3>
-        <p>Sites que funcionam perfeitamente no celular, tablet ou computador.</p>
-      </div>
+      <h2>💼 Projetos práticos e úteis</h2>
+      <p>Esses projetos mostram na prática diferentes coisas. Cada exemplo é direto, funcional e feito para resolver uma necessidade comum.</p>
+
       <div class="projeto">
-        <img src="https://cdn-icons-png.flaticon.com/512/841/841364.png" alt="Projeto 1" class="img-projeto" />
-        <h3>Portfólio Pessoal</h3>
-        <p>🌐 Site criado com HTML e CSS, apresentando minhas informações, contatos e links.</p>
-        <a href="#" target="_blank" class="botao">Ver Projeto</a>
+        <img src="https://cdn-icons-png.flaticon.com/512/4202/4202840.png" alt="Formulário" class="img-projeto" />
+        <h3>Formulário com Validação</h3>
+        <p>📩 Um formulário que valida nome, email e mensagem usando JavaScript.</p>
+        <a href="projetos/formulario/index.html" target="_blank" class="botao">Ver exemplo</a>
       </div>
+
       <div class="projeto">
-        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Projeto 2" class="img-projeto" />
-        <h3>Página de Produto</h3>
-        <p>🛟️ Site fictício para venda de produto, com layout moderno e responsivo.</p>
-        <a href="#" target="_blank" class="botao">Ver Projeto</a>
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Produto" class="img-projeto" />
+        <h3>Página de Produto Simples</h3>
+        <p>🛒 Uma página limpa com nome, descrição, imagem e botão de compra.</p>
+        <a href="projetos/pagina-produto/" target="_blank" class="botao">Ver exemplo</a>
+      </div>
+
+      <div class="projeto">
+        <img src="https://cdn-icons-png.flaticon.com/512/990/990252.png" alt="To-do List" class="img-projeto" />
+        <h3>Lista de Tarefas Interativa</h3>
+        <p>✅ Uma lista onde você pode adicionar e remover tarefas com JavaScript puro.</p>
+        <a href="projetos/lista-tarefas/" target="_blank" class="botao">Ver exemplo</a>
+      </div>
+
+      <div class="projeto">
+        <img src="https://cdn-icons-png.flaticon.com/512/841/841364.png" alt="Landing Page" class="img-projeto" />
+        <h3>Página de Captura de Leads</h3>
+        <p>🎯 Uma página para captar contatos com chamada para ação e formulário.</p>
+        <a href="projetos/captura-email/" target="_blank" class="botao">Ver exemplo</a>
       </div>
     </section>
 
@@ -180,11 +182,9 @@
     <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" />
   </a>
 
-  <!-- Som de clique -->
   <audio id="click-sound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3" preload="auto"></audio>
 
   <script>
-    // Carrossel de depoimentos
     const depoimentos = document.querySelectorAll('.depoimento');
     let indexAtual = 0;
 
@@ -196,7 +196,6 @@
 
     setInterval(mostrarProximoDepoimento, 4000);
 
-    // Som ao clicar em links e botões
     const clickSound = document.getElementById("click-sound");
     document.querySelectorAll("a, button").forEach(el => {
       el.addEventListener("click", () => {
