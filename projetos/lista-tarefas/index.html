@@ -9,11 +9,12 @@
 <body>
   <h1>📋 Lista de Tarefas</h1>
 
-  <div class="container">
-    <input type="text" id="nova-tarefa" placeholder="Digite sua tarefa">
-    <button onclick="adicionarTarefa()">Adicionar</button>
-    <ul id="lista"></ul>
-  </div>
+  <form id="formTarefa" class="container">
+    <input type="text" id="novaTarefa" placeholder="Digite sua tarefa">
+    <button type="submit">Adicionar</button>
+  </form>
+
+  <ul id="lista"></ul>
 
   <script src="script.js"></script>
 </body>
