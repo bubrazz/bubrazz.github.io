@@ -1,102 +1,121 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  text-align: center;
+  margin: 0;
   padding: 20px;
-  transition: background-color 0.3s ease;
-}
-
-h1 {
-  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .dark-mode {
-  background-color: #1e1e1e;
-  color: #eee;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+h1 {
+  text-align: center;
+  font-size: 24px;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 input[type="text"] {
   padding: 10px;
-  width: 60%;
-  max-width: 300px;
+  width: 70%;
   border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  margin: 5px;
-  color: white;
-  cursor: pointer;
+  border-radius: 8px;
+  margin-bottom: 10px;
   font-size: 16px;
 }
 
-form {
-  margin-top: 10px;
+button {
+  padding: 10px 16px;
+  margin: 4px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-#temaToggle {
-  background-color: #6c63ff;
+button:hover {
+  transform: scale(1.05);
+}
+
+button.adicionar {
+  background-color: #28a745;
+  color: white;
+}
+
+button.concluir {
+  background-color: #28a745;
+  color: white;
+}
+
+button.excluir {
+  background-color: #dc3545;
+  color: white;
 }
 
 .tarefa {
-  background: #fff;
-  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 12px;
   margin: 10px auto;
-  max-width: 400px;
-  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  max-width: 500px;
+  transition: background-color 0.3s;
 }
 
 .dark-mode .tarefa {
-  background-color: #333;
-  color: #eee;
-}
-
-.tarefa.animated {
-  animation: fadeIn 0.4s ease;
-}
-
-.tarefa.removendo {
-  animation: fadeOut 0.3s ease forwards;
+  background-color: #1e1e1e;
 }
 
 .tarefa span {
   flex-grow: 1;
   text-align: left;
+  font-size: 18px;
 }
 
 .tarefa.concluida span {
   text-decoration: line-through;
-  color: #888;
+  opacity: 0.6;
 }
 
-.tarefa button {
-  margin-left: 5px;
-  padding: 5px 10px;
-  font-size: 18px;
+.top-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
-.tarefa button:first-of-type {
-  background-color: #007bff;
-}
-.tarefa button:last-of-type {
-  background-color: #dc3545;
+button.tema {
+  background-color: #fdd835;
+  color: #333;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+.dark-mode button.tema {
+  background-color: #ff9800;
+  color: #fff;
 }
 
-@keyframes fadeOut {
-  from { opacity: 1; transform: scale(1); }
-  to { opacity: 0; transform: scale(0.9); }
+button.exportar {
+  background-color: #03a9f4;
+  color: #fff;
+}
+
+.dark-mode input[type="text"] {
+  background-color: #2a2a2a;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.dark-mode input[type="text"]::placeholder {
+  color: #aaa;
 }
