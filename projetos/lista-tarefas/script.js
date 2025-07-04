@@ -1,17 +1,11 @@
-function liberarTarefas() {
-  document.getElementById("autorizacao").style.display = "none";
-  document.getElementById("painel").style.display = "block";
-  carregarTarefas();
-}
+// Quando a página carrega, busca as tarefas salvas
+document.addEventListener("DOMContentLoaded", () => {
+  aplicarTemaSalvo();
+  const tarefasSalvas = JSON.parse(localStorage.getItem("tarefas")) || [];
+  tarefasSalvas.forEach(tarefa => adicionarTarefaNaTela(tarefa.texto, tarefa.concluida));
+});
 
-function negarPermissao() {
-  document.getElementById("autorizacao").style.display = "none";
-  const msg = document.getElementById("mensagemRecado");
-  msg.innerText = "Então nada de tarefas por enquanto, marujo curioso!";
-  msg.style.display = "block";
-}
-
-// Salvar no localStorage
+// Salva no localStorage
 function salvarTarefas() {
   const tarefas = [];
   document.querySelectorAll(".tarefa").forEach(item => {
@@ -23,11 +17,11 @@ function salvarTarefas() {
   localStorage.setItem("tarefas", JSON.stringify(tarefas));
 }
 
-// Adicionar tarefa na tela com animação
+// Cria tarefa visualmente
 function adicionarTarefaNaTela(texto, concluida = false) {
   const lista = document.getElementById("lista");
   const item = document.createElement("li");
-  item.className = "tarefa animated";
+  item.className = "tarefa";
   if (concluida) item.classList.add("concluida");
 
   const span = document.createElement("span");
@@ -35,19 +29,18 @@ function adicionarTarefaNaTela(texto, concluida = false) {
 
   const btnConcluir = document.createElement("button");
   btnConcluir.innerText = "✔";
+  btnConcluir.className = "concluir";
   btnConcluir.onclick = () => {
     item.classList.toggle("concluida");
     salvarTarefas();
   };
 
   const btnExcluir = document.createElement("button");
-  btnExcluir.innerText = "✘";
+  btnExcluir.innerText = "✖";
+  btnExcluir.className = "excluir";
   btnExcluir.onclick = () => {
-    item.classList.add("removendo");
-    setTimeout(() => {
-      item.remove();
-      salvarTarefas();
-    }, 300);
+    item.remove();
+    salvarTarefas();
   };
 
   item.appendChild(span);
@@ -57,47 +50,44 @@ function adicionarTarefaNaTela(texto, concluida = false) {
   salvarTarefas();
 }
 
-// Enviar tarefa
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("formTarefa");
-  if (form) {
-    form.addEventListener("submit", e => {
-      e.preventDefault();
-      const input = document.getElementById("novaTarefa");
-      const texto = input.value.trim();
-      if (texto) {
-        adicionarTarefaNaTela(texto);
-        input.value = "";
-      }
-    });
-  }
-
-  // Tema claro/escuro
-  const temaBtn = document.getElementById("temaToggle");
-  if (temaBtn) {
-    temaBtn.addEventListener("click", () => {
-      document.body.classList.toggle("dark-mode");
-    });
+// Adiciona nova tarefa
+document.getElementById("formTarefa").addEventListener("submit", e => {
+  e.preventDefault();
+  const input = document.getElementById("novaTarefa");
+  const texto = input.value.trim();
+  if (texto) {
+    adicionarTarefaNaTela(texto);
+    input.value = "";
   }
 });
 
-// Carregar do localStorage
-function carregarTarefas() {
-  const tarefasSalvas = JSON.parse(localStorage.getItem("tarefas")) || [];
-  tarefasSalvas.forEach(t => adicionarTarefaNaTela(t.texto, t.concluida));
+// Alternar entre claro e escuro
+function alternarTema() {
+  document.body.classList.toggle("dark-mode");
+  const modoAtual = document.body.classList.contains("dark-mode") ? "dark" : "light";
+  localStorage.setItem("tema", modoAtual);
 }
 
-// Exportar .txt
+function aplicarTemaSalvo() {
+  const temaSalvo = localStorage.getItem("tema");
+  if (temaSalvo === "dark") {
+    document.body.classList.add("dark-mode");
+  }
+}
+
+// Exportar tarefas
 function exportarTarefas() {
   const tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
-  let conteudo = "Minhas Tarefas:\n\n";
-  tarefas.forEach((t, i) => {
-    conteudo += `${i + 1}. ${t.texto} ${t.concluida ? "(concluída)" : ""}\n`;
-  });
+  if (tarefas.length === 0) {
+    alert("Nenhuma tarefa para exportar.");
+    return;
+  }
+  const texto = tarefas.map(t => `${t.concluida ? "[x]" : "[ ]"} ${t.texto}`).join("\n");
+  const blob = new Blob([texto], { type: "text/plain" });
+  const url = URL.createObjectURL(blob);
 
-  const blob = new Blob([conteudo], { type: "text/plain;charset=utf-8" });
   const link = document.createElement("a");
-  link.href = URL.createObjectURL(blob);
-  link.download = "tarefas_do_bub.txt";
+  link.href = url;
+  link.download = "tarefas.txt";
   link.click();
 }
