@@ -1,10 +1,10 @@
-// Controle de permissão
+// Só inicia o app se tiver permissão
 function liberarAcesso(permissao) {
   const tela = document.getElementById("tela-permissao");
   const conteudo = document.getElementById("conteudo");
 
   if (permissao) {
-    tela.style.display = "none";
+    tela.remove();
     conteudo.classList.remove("oculto");
     iniciarApp();
   } else {
@@ -12,7 +12,12 @@ function liberarAcesso(permissao) {
   }
 }
 
-// Inicializa funcionalidades principais
+// Protege tudo até a permissão
+window.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("conteudo").classList.add("oculto");
+});
+
+// Começa o app (só se tiver permissão)
 function iniciarApp() {
   aplicarTemaSalvo();
 
@@ -30,7 +35,6 @@ function iniciarApp() {
   });
 }
 
-// Salva no localStorage
 function salvarTarefas() {
   const tarefas = [];
   document.querySelectorAll(".tarefa").forEach(item => {
@@ -42,7 +46,6 @@ function salvarTarefas() {
   localStorage.setItem("tarefas", JSON.stringify(tarefas));
 }
 
-// Cria tarefa visualmente
 function adicionarTarefaNaTela(texto, concluida = false) {
   const lista = document.getElementById("lista");
   const item = document.createElement("li");
@@ -75,7 +78,6 @@ function adicionarTarefaNaTela(texto, concluida = false) {
   salvarTarefas();
 }
 
-// Alternar entre claro e escuro
 function alternarTema() {
   document.body.classList.toggle("dark-mode");
   const modoAtual = document.body.classList.contains("dark-mode") ? "dark" : "light";
@@ -89,7 +91,6 @@ function aplicarTemaSalvo() {
   }
 }
 
-// Exportar tarefas
 function exportarTarefas() {
   const tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
   if (tarefas.length === 0) {
