@@ -1,121 +1,119 @@
 body {
   font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
   margin: 0;
   padding: 20px;
-  background-color: #f0f0f0;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.dark-mode {
-  background-color: #121212;
-  color: #ffffff;
+  text-align: center;
 }
 
 h1 {
-  text-align: center;
-  font-size: 24px;
+  color: #333;
 }
 
-.container {
-  max-width: 500px;
-  margin: 0 auto;
-  text-align: center;
+.container, .top-buttons {
+  margin-top: 20px;
 }
 
 input[type="text"] {
   padding: 10px;
-  width: 70%;
+  width: 60%;
+  max-width: 300px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  margin-bottom: 10px;
-  font-size: 16px;
 }
 
 button {
-  padding: 10px 16px;
-  margin: 4px;
-  font-size: 16px;
+  padding: 10px;
+  margin-left: 5px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  font-weight: bold;
 }
 
-button:hover {
-  transform: scale(1.05);
-}
-
-button.adicionar {
+.adicionar {
   background-color: #28a745;
   color: white;
 }
 
-button.concluir {
-  background-color: #28a745;
+.concluir {
+  background-color: #007bff;
   color: white;
+  margin-left: 10px;
 }
 
-button.excluir {
+.excluir {
   background-color: #dc3545;
   color: white;
+  margin-left: 5px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
 }
 
 .tarefa {
-  background-color: #ffffff;
-  border-radius: 8px;
+  background-color: white;
   padding: 12px;
+  border-radius: 8px;
   margin: 10px auto;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  max-width: 400px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 500px;
-  transition: background-color 0.3s;
-}
-
-.dark-mode .tarefa {
-  background-color: #1e1e1e;
 }
 
 .tarefa span {
-  flex-grow: 1;
+  flex: 1;
   text-align: left;
-  font-size: 18px;
 }
 
 .tarefa.concluida span {
   text-decoration: line-through;
-  opacity: 0.6;
+  color: gray;
 }
 
-.top-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 15px;
+.dark-mode {
+  background-color: #121212;
+  color: white;
 }
 
-button.tema {
-  background-color: #fdd835;
+.dark-mode input, .dark-mode .tarefa {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.top-buttons button {
+  background-color: #eee;
   color: #333;
 }
 
-.dark-mode button.tema {
-  background-color: #ff9800;
-  color: #fff;
+.dark-mode .top-buttons button {
+  background-color: #444;
+  color: white;
 }
 
-button.exportar {
-  background-color: #03a9f4;
-  color: #fff;
+/* Tela de permissão */
+.tela-permissao {
+  position: fixed;
+  inset: 0;
+  background-color: #000000cc;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
 }
 
-.dark-mode input[type="text"] {
-  background-color: #2a2a2a;
-  color: #fff;
-  border: 1px solid #444;
+.tela-permissao button {
+  margin: 10px;
+  padding: 12px 20px;
+  font-size: 18px;
 }
 
-.dark-mode input[type="text"]::placeholder {
-  color: #aaa;
+.oculto {
+  display: none;
 }
