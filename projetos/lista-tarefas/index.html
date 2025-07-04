@@ -7,19 +7,28 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>📋 Lista de Tarefas do Bub</h1>
 
-  <div class="top-buttons">
-    <button class="tema" onclick="alternarTema()">🌗 Alternar Tema</button>
-    <button class="exportar" onclick="exportarTarefas()">💾 Exportar Tarefas</button>
+  <div id="tela-permissao" class="tela-permissao">
+    <h2>🚪 Você tem permissão do Bub para entrar?</h2>
+    <button onclick="liberarAcesso(true)">Sim</button>
+    <button onclick="liberarAcesso(false)">Não</button>
   </div>
 
-  <form id="formTarefa" class="container">
-    <input type="text" id="novaTarefa" placeholder="Digite sua tarefa" />
-    <button type="submit" class="adicionar">Adicionar</button>
-  </form>
+  <div id="conteudo" class="oculto">
+    <h1>📋 Lista de Tarefas do Bub</h1>
 
-  <ul id="lista"></ul>
+    <div class="top-buttons">
+      <button class="tema" onclick="alternarTema()">🌗 Alternar Tema</button>
+      <button class="exportar" onclick="exportarTarefas()">💾 Exportar Tarefas</button>
+    </div>
+
+    <form id="formTarefa" class="container">
+      <input type="text" id="novaTarefa" placeholder="Digite sua tarefa" />
+      <button type="submit" class="adicionar">Adicionar</button>
+    </form>
+
+    <ul id="lista"></ul>
+  </div>
 
   <script src="script.js"></script>
 </body>
