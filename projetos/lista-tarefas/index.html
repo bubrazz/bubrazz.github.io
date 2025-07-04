@@ -3,18 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Tarefas</title>
+  <title>Lista de Tarefas do Bub</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>📋 Lista de Tarefas</h1>
+  <h1>📋 Lista de Tarefas do Bub</h1>
 
-  <form id="formTarefa" class="container">
-    <input type="text" id="novaTarefa" placeholder="Digite sua tarefa">
-    <button type="submit">Adicionar</button>
-  </form>
+  <div id="autorizacao">
+    <p class="pergunta">Você tem permissão do Bub para mexer aqui?</p>
+    <button onclick="liberarTarefas()">✅ Sim, tenho!</button>
+    <button onclick="negarPermissao()">❌ Não, tô só olhando...</button>
+  </div>
 
-  <ul id="lista"></ul>
+  <div id="painel" style="display: none;">
+    <button id="temaToggle">🌓 Alternar Tema</button>
+    <button onclick="exportarTarefas()">💾 Exportar Tarefas</button>
+
+    <form id="formTarefa" class="container">
+      <input type="text" id="novaTarefa" placeholder="Digite sua tarefa">
+      <button type="submit">Adicionar</button>
+    </form>
+
+    <ul id="lista"></ul>
+  </div>
+
+  <p id="mensagemRecado" style="display: none;"></p>
 
   <script src="script.js"></script>
 </body>
