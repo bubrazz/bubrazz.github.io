@@ -1,9 +1,34 @@
-// Quando a página carrega, busca as tarefas salvas
-document.addEventListener("DOMContentLoaded", () => {
+// Controle de permissão
+function liberarAcesso(permissao) {
+  const tela = document.getElementById("tela-permissao");
+  const conteudo = document.getElementById("conteudo");
+
+  if (permissao) {
+    tela.style.display = "none";
+    conteudo.classList.remove("oculto");
+    iniciarApp();
+  } else {
+    tela.innerHTML = "<h2>⛔ Sem permissão! Volte quando tiver a permissão do Bub!</h2>";
+  }
+}
+
+// Inicializa funcionalidades principais
+function iniciarApp() {
   aplicarTemaSalvo();
+
   const tarefasSalvas = JSON.parse(localStorage.getItem("tarefas")) || [];
   tarefasSalvas.forEach(tarefa => adicionarTarefaNaTela(tarefa.texto, tarefa.concluida));
-});
+
+  document.getElementById("formTarefa").addEventListener("submit", e => {
+    e.preventDefault();
+    const input = document.getElementById("novaTarefa");
+    const texto = input.value.trim();
+    if (texto) {
+      adicionarTarefaNaTela(texto);
+      input.value = "";
+    }
+  });
+}
 
 // Salva no localStorage
 function salvarTarefas() {
@@ -49,17 +74,6 @@ function adicionarTarefaNaTela(texto, concluida = false) {
   lista.appendChild(item);
   salvarTarefas();
 }
-
-// Adiciona nova tarefa
-document.getElementById("formTarefa").addEventListener("submit", e => {
-  e.preventDefault();
-  const input = document.getElementById("novaTarefa");
-  const texto = input.value.trim();
-  if (texto) {
-    adicionarTarefaNaTela(texto);
-    input.value = "";
-  }
-});
 
 // Alternar entre claro e escuro
 function alternarTema() {
