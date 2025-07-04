@@ -19,7 +19,7 @@ function salvarTarefas() {
 // Cria tarefa visualmente
 function adicionarTarefaNaTela(texto, concluida = false) {
   const lista = document.getElementById("lista");
-  const item = document.createElement("div");
+  const item = document.createElement("li");
   item.className = "tarefa";
   if (concluida) item.classList.add("concluida");
 
